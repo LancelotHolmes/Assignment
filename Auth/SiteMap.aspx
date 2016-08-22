@@ -1,12 +1,9 @@
 ﻿<%@ Page Title="SiteMap" Language="C#" MasterPageFile="~/MasterPage_user.master" AutoEventWireup="true" CodeFile="SiteMap.aspx.cs" Inherits="SiteMap" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainBody" runat="Server">
-    <!--introduction-->
-    <%-- <asp:SiteMapPath ID="SiteMapPath1" runat="server">
-        <PathSeparatorTemplate>
-            -->
-        </PathSeparatorTemplate>
-    </asp:SiteMapPath>--%>
+
+     <!--grumble CSS-->
+    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
 
     <div class="padding100" id="blog">
         <div class="container">
@@ -31,7 +28,7 @@
             <!-- /.row -->
             <!-- Project One -->
             <div class="row">
-                <div class="col-md-6">
+                <div id="div_calendar" class="col-md-6">
                     <%--<a href="#">
                         <img class="img-responsive animated wow fadeInLeft" data-wow-delay="0.2s" src="img/sitemap.jpg"
                             alt="">
@@ -52,17 +49,8 @@
                     <asp:Label ID="displayEvent" runat="server" Text="" Font-Bold="true" Font-Size="Large" Font-Names="Arial"></asp:Label>
 
                 </div>
-                <div class="col-md-6 animated wow fadeInRight" data-wow-delay="0.4s">
-                    <%--<h3>
-                        <strong>Our Projects</strong></h3>
-                    <h4>
-                        NewBingo</h4>
-                    <p>
-                        Akshara is a library to buy Bootstrap themes and templates for your business need.
-                        Want more Bootstrap themes & templates? Subscribe to our mailing list to receive
-                        an update when new items arrive!</p>
-                    <a class="btn btn-success" href="#">View Project <span class="glyphicon glyphicon-chevron-right">
-                    </span></a>--%>
+                <div id="div_treeview" class="col-md-6 animated wow fadeInRight" data-wow-delay="0.4s">
+
                     <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
 
                     <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="BulletedList4" Height="443px" Width="466px" Font-Size="Larger" ShowExpandCollapse="False">
@@ -78,10 +66,34 @@
 
         </div>
     </div>
-    <%-- <div class="padding100" id="blog">
-        <div class="container">
-            <asp:Label ID="Label1" runat="server" Text="Label" ></asp:Label>
-        </div>
-    </div>--%>
+
+
+     <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+         <!--grumble js-->
+        <script src="js/jquery.grumble.min.js?v=6"></script>
+        <script src="js/Bubble.js" type="text/javascript"></script>     
+        <script type="text/javascript">
+            $('#div_calendar').grumble({
+                text: 'calendar show the events to do',
+                angle: 120,
+                distance: -50,
+                showAfter: 2000,
+                hideAfter: false,
+                hasHideButton: true,
+                buttonHideText: 'Pop!'
+            });
+
+            $('#div_treeview').grumble({
+                text: 'tree view of the site map show a skeleton',
+                angle: 120,
+                distance: -550,
+                showAfter: 2000,
+                hideAfter: false,
+                hasHideButton: true,
+                buttonHideText: 'Pop!'
+            });
+
+        </script>
+
 </asp:Content>
 

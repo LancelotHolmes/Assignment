@@ -57,6 +57,9 @@
     <link href="css/css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
+    <!--grumble CSS-->
+    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
+
     <div class="container padding100 ful">
         <!--the send email form-->
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -71,7 +74,7 @@
                 <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
             </asp:SiteMapPath>
 
-            <div class="registrationform">
+            <div id="div_register" class="registrationform">
                 <div class="form-horizontal">
                     <fieldset>                        
                         <legend>Registration Form <i class="fa fa-pencil pull-right"></i></legend>
@@ -191,7 +194,7 @@
     </div>
     <script src="js/jquery1.js" type="text/javascript"></script>
     <script src="js/bootstrap1.min.js" type="text/javascript"></script>
-    <script src="js/jquery.backstretch.js" type="text/javascript"></script>
+    <script src="js/jquery.backstretch.js" type="text/javascript"></script>      
     <script type="text/javascript">
         'use strict';
 
@@ -212,5 +215,23 @@
           //  fade: 1500
         }
     );
+
     </script>
+
+    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+         <!--grumble js-->
+        <script src="js/jquery.grumble.min.js?v=6"></script>
+        <script src="js/Bubble.js" type="text/javascript"></script>   
+        <script type="text/javascript">
+            $('#div_register').grumble({
+                text: 'This is the register form of our website',
+                angle: 100,
+                distance: 300,
+                showAfter: 2000,
+                hideAfter: false,
+                hasHideButton: true,
+                buttonHideText: 'Pop!'
+            });
+
+        </script>
 </asp:Content>

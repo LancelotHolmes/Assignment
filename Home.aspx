@@ -2,6 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainBody" runat="Server">
 
+
+     <!--grumble CSS-->
+    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
+
+
+
     <!-- Carousel -->
     <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Indicators -->
@@ -98,6 +104,35 @@
 
         </div>
     </div>
+
+
+    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+         <!--grumble js-->
+        <script src="js/jquery.grumble.min.js?v=6"></script>
+        <script src="js/Bubble.js" type="text/javascript"></script>     
+        <script type="text/javascript">
+            $('#carousel-example-generic').grumble({
+                text: 'This is the AdRotator of our HomePage',
+                angle: 120,
+                distance: 3,
+                showAfter: 2000,
+                hideAfter: false,
+                hasHideButton: true,
+                buttonHideText: 'Pop!'
+            });
+
+            $('#blog').grumble({
+                text: 'This is the introduction of the topic of our website',
+                angle: 90,
+                distance: 100,
+                showAfter: 2000,
+                type: 'alt-',
+                hideAfter: false,
+                hasHideButton: true,
+                buttonHideText: 'Pop!'
+            });
+        </script>
+
 
 
 </asp:Content>

@@ -33,9 +33,12 @@
     <link href="css/css/style.css" rel="stylesheet" type="text/css" />
     <link href="css/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
+    <!--grumble CSS-->
+    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
+
     <div class="container padding100 ful">
         <!--the send email form-->
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div id="div_emailform" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <!--bread crump-->
             <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
                 <CurrentNodeStyle ForeColor="#333333" />
@@ -97,7 +100,7 @@
         </div>
 
         <!--the contact list-->
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+        <div id="div_checkbox" class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
             <br />
 
             <div class="registrationform">
@@ -171,5 +174,35 @@
         }
     );
     </script>
+
+    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+         <!--grumble js-->
+        <script src="js/jquery.grumble.min.js?v=6"></script>
+        <script src="js/Bubble.js" type="text/javascript"></script>     
+        <script type="text/javascript">
+            $('#div_emailform').grumble({
+                text: 'write your email here',
+                angle: 120,
+                distance: -50,
+                showAfter: 2000,
+                hideAfter: false,
+                hasHideButton: true,
+                type: 'alt-',
+                buttonHideText: 'Pop!'
+            });
+
+            $('#div_checkbox').grumble({
+                text: 'before send email,choose the receiver(s) from the checkbox',
+                angle: 120,
+                distance: 0,
+                showAfter: 2000,
+                hideAfter: false,
+                hasHideButton: true,
+                type: 'alt-',
+                buttonHideText: 'Pop!'
+            });
+
+        </script>
+
 </asp:Content>
 

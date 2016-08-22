@@ -1,8 +1,13 @@
 ﻿<%@ Page Title="History" Language="C#" MasterPageFile="~/MasterPage_user.master" AutoEventWireup="true" CodeFile="History.aspx.cs" Inherits="History" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainBody" Runat="Server">
+
+     <!--grumble CSS-->
+    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
+
      <div class="padding100" id="blog">
-        <div class="container">
+        <div id="div_history" class="container">
            <!--bread crump-->
+            <div id="div_bread">
             <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.8em" PathSeparator=" : ">
                 <CurrentNodeStyle ForeColor="#333333" />
                 <NodeStyle Font-Bold="True" ForeColor="#7C6F57" />
@@ -12,7 +17,7 @@
                 </PathSeparatorTemplate>
                 <RootNodeStyle Font-Bold="True" ForeColor="#5D7B9D" />
             </asp:SiteMapPath>
-
+                </div>
             <!-- Page Heading -->
             <div class="row">
                 <div class="col-lg-12">
@@ -34,5 +39,33 @@
 
         </div>
     </div>
+
+    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+         <!--grumble js-->
+        <script src="js/jquery.grumble.min.js?v=6"></script>
+        <script src="js/Bubble.js" type="text/javascript"></script>     
+        <script type="text/javascript">
+            $('#div_history').grumble({
+                text: 'history page of this website',
+                angle: 120,
+                distance: -50,
+                showAfter: 2000,
+                hideAfter: false,
+                hasHideButton: true,
+                buttonHideText: 'Pop!'
+            });
+
+            $('#div_bread').grumble({
+                text: 'site map path of this website',
+                angle: 90,
+                distance: -350,
+                showAfter: 2000,
+                hideAfter: false,
+                hasHideButton: true,
+                buttonHideText: 'Pop!'
+            });
+
+        </script>
+
 </asp:Content>
 
