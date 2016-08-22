@@ -78,9 +78,9 @@
                 <div class="form-horizontal">
                     <fieldset>                        
                         <legend>Registration Form <i class="fa fa-pencil pull-right"></i></legend>
-                         <asp:HyperLink ID="HyperLink1" runat="server" Font-Italic="true" Font-Size="15px" ForeColor="White" Font-Underline="true" NavigateUrl="~/Auth/ShowAllUsers.aspx">Click here to see all the customers.</asp:HyperLink>
+                         <asp:HyperLink ID="HyperLink1" runat="server" Font-Italic="true" Font-Size="15px" ForeColor="White" Font-Underline="true" NavigateUrl="~/Auth/ShowAllUsers.aspx">Click here to see all the users.</asp:HyperLink>
                          <br />
-                         <asp:HyperLink ID="HyperLink2" runat="server" Font-Italic="true" Font-Size="15px" Font-Underline="true" ForeColor="White" NavigateUrl="~/Auth/SelectUsers.aspx">Click here to search customers under certain condition.</asp:HyperLink>
+                         <asp:HyperLink ID="HyperLink2" runat="server" Font-Italic="true" Font-Size="15px" Font-Underline="true" ForeColor="White" NavigateUrl="~/Auth/SelectUsers.aspx">Click here to search users under certain condition.</asp:HyperLink>
                          <hr />
 
                         <div class="form-group">
