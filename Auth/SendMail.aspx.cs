@@ -27,7 +27,8 @@ public partial class SendMail : System.Web.UI.Page
                 newMsg.To.Add(new MailAddress(gvRow.Cells[1].Text, gvRow.Cells[0].Text));
             }
         }
-        newMsg.From = new MailAddress("forneverlancelot@gmail.com", "Lancelot");
+        
+        newMsg.From = new MailAddress("yzh190@student.monash.edu", "Lancelot");
         newMsg.Subject = tb_subject.Text;
         newMsg.Body = tb_message.Text;
 
@@ -50,12 +51,8 @@ public partial class SendMail : System.Web.UI.Page
             try
             {
                 SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("forneverlancelot@gmail.com", "zy19931211");
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.EnableSsl = true;
+                smtp.Host = "smtp.monash.edu.au";
+                
                 smtp.Send(newMsg);
                 lbl_Mail.Text = "Email successfully sent";
                 lbl_Mail.Visible = true;
