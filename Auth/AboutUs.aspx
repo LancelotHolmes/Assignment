@@ -2,8 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainBody" Runat="Server">
 
-     <!--grumble CSS-->
-    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
+
 
      <div class="padding100" id="blog">
         <div id="div_aboutus" class="container">
@@ -30,7 +29,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <a href="#">
-                        <img class="img-responsive animated wow fadeInLeft" data-wow-delay="0.2s" src="img/about.jpg"
+                        <img class="img-responsive animated wow fadeInLeft" data-wow-delay="0.2s" src="../img/about.jpg"
                             alt="" />
                     </a>
                 </div>
@@ -47,22 +46,16 @@
         </div>
     </div>
 
-    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
-         <!--grumble js-->
-        <script src="js/jquery.grumble.min.js?v=6"></script>
-        <script src="js/Bubble.js" type="text/javascript"></script>     
-        <script type="text/javascript">
-            $('#div_aboutus').grumble({
-                text: 'introduction of the author of this website',
-                angle: 120,
-                distance: -50,
-                showAfter: 2000,
-                hideAfter: false,
-                hasHideButton: true,
-                buttonHideText: 'Pop!'
-            });
-
-        </script>
+    <script src="../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/wow.min.js" type="text/javascript"></script>
+    <script src="../js/tutorial.js"></script>
+    <script src="../css/owl/owl.carousel.js" type="text/javascript"></script>
+    <!-- SmartMenus jQuery plugin -->
+    <script type="text/javascript" src="../js/jquery.smartmenus.js"></script>
+    <!-- SmartMenus jQuery Bootstrap Addon -->
+    <script type="text/javascript" src="../js/jquery.smartmenus.bootstrap.js"></script>
 
 </asp:Content>
 

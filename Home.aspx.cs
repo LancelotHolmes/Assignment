@@ -12,4 +12,18 @@ public partial class test : System.Web.UI.Page
     {
         Page.Title = "Trip & Shoot"; 
     }
+
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+
+        if (Session["Theme"] != null)
+        {
+            Page.Theme = (String)Session["Theme"];
+        }
+        else
+        {
+
+            Page.Theme = "none";
+        }
+    }
 }

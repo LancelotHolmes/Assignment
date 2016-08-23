@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="FAQ" Language="C#" MasterPageFile="~/MasterPage_user.master" AutoEventWireup="true" CodeFile="FAQ.aspx.cs" Inherits="FAQ" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainBody" runat="Server">
-     <!--grumble CSS-->
-    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
+
 
     <div class="padding100" id="blog">
         <div id="div_faq" class="container">
@@ -64,21 +63,16 @@
         </div>
     </div>
 
-    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
-         <!--grumble js-->
-        <script src="js/jquery.grumble.min.js?v=6"></script>
-        <script src="js/Bubble.js" type="text/javascript"></script>     
-        <script type="text/javascript">
-            $('#div_faq').grumble({
-                text: 'FAQ page of this website',
-                angle: 120,
-                distance: -50,
-                showAfter: 2000,
-                hideAfter: false,
-                hasHideButton: true,
-                buttonHideText: 'Pop!'
-            });
+    <script src="../js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/wow.min.js" type="text/javascript"></script>
+    <script src="../js/tutorial.js"></script>
+    <script src="../css/owl/owl.carousel.js" type="text/javascript"></script>
+    <!-- SmartMenus jQuery plugin -->
+    <script type="text/javascript" src="../js/jquery.smartmenus.js"></script>
+    <!-- SmartMenus jQuery Bootstrap Addon -->
+    <script type="text/javascript" src="../js/jquery.smartmenus.bootstrap.js"></script>
 
-        </script>
 </asp:Content>
 

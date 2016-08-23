@@ -3,12 +3,10 @@
 <asp:Content ID="loginConten" ContentPlaceHolderID="MainBody" runat="Server">
     <asp:AccessDataSource ID="UserLogin" runat="server" DataFile="~/App_Data/database.accdb" SelectCommand="SELECT * FROM [user]" OnSelected="CheckLogin" />
     <!-- Bootstrap Core CSS -->
-    <link href="css/css/bootstrap1.min.css" rel="stylesheet" />
+    <%--<link href="css/css/bootstrap1.min.css" rel="stylesheet" />--%>
     <!-- Custom CSS -->
-    <link href="css/css/the-big-picture.css" rel="stylesheet" />
-    <link href="css/css/font-icon.css" rel="stylesheet" type="text/css" />
-    <link href="css/css/main.css" rel="stylesheet" type="text/css" />
-    <link href="css/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="css/the-big-picture.css" rel="stylesheet" />
+
     <!-- ============ Google fonts ============ -->
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'
         type='text/css' />
@@ -16,12 +14,12 @@
         rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-     <!--grumble CSS-->
-    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
+
 
     <div class="container padding100 full">
 
         <div id="div_login" class="col-lg-offset-3 col-lg-6 col-lg-offset-3 col-xs-offset-0 col-xs-12 col-xs-offset-0 padding-top50">
+
 
            <div class="registrationform">
                 <asp:Login ID="Login" runat="server" OnAuthenticate="Login_Authenticate">
@@ -51,21 +49,6 @@
         </div>
     </div>
 
-    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
-         <!--grumble js-->
-        <script src="js/jquery.grumble.min.js?v=6"></script>
-        <script src="js/Bubble.js" type="text/javascript"></script>     
-        <script type="text/javascript">
-            $('#div_login').grumble({
-                text: 'This is the Login form of our website',
-                angle: 120,
-                distance: 3,
-                showAfter: 2000,
-                hideAfter: false,
-                hasHideButton: true,
-                buttonHideText: 'Pop!'
-            });
-
-        </script>
+   
 
 </asp:Content>

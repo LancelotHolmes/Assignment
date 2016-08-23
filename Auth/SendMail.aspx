@@ -14,7 +14,6 @@
 
 </script>
 
-
     <!--[if lt IE 7]> <html> <![endif]-->
     <!--[if IE 7]>    <html> <![endif]-->
     <!--[if IE 8]>    <html> <![endif]-->
@@ -29,12 +28,10 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800'
         rel='stylesheet' type='text/css' />
     <!-- ============ Add custom CSS here ============ -->
-    <link href="css/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
-    <!--grumble CSS-->
-    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../css/font-awesome.css" rel="stylesheet" type="text/css" />
 
     <div class="container padding100 ful">
         <!--the send email form-->
@@ -81,8 +78,7 @@
                         <div class="form-group">
                             <asp:Label ID="Label2" runat="server" Text="Message" CssClass="col-lg-2 control-label"></asp:Label>
                             <div class="col-lg-10">
-                                <asp:TextBox ID="tb_message" runat="server" Display="Dynamic" CssClass="form-control" Rows="7" TextMode="MultiLine" ForeColor="Black"></asp:TextBox>
-                                <%--<textarea id="TextArea1" cols="20" rows="10" runat="server" class="form-control"></textarea>--%>
+                                <asp:TextBox ID="tb_message" runat="server" Display="Dynamic" CssClass="form-control" Rows="7" TextMode="MultiLine" ForeColor="Black"></asp:TextBox>      
                             </div>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Font-Size="15px" ForeColor="Red" ErrorMessage="Email content cannot be empty." ControlToValidate="tb_message" />
                             
@@ -108,10 +104,8 @@
                     <fieldset>                        
                         <legend>Contact List <i class="fa fa-envelope pull-right"></i></legend>
                         <div class="form-group">
-                            <%--<asp:Label ID="Label4" runat="server" Text="Subject" CssClass="col-lg-2 control-label"></asp:Label>--%>
                             <asp:AccessDataSource ID="dsUsers" runat="server" DataFile="~/App_Data/database.accdb" SelectCommand="SELECT [username], [email] FROM [user] ORDER BY [username]" ></asp:AccessDataSource>
                             <div class="col-lg-10">
-                                
                                 <asp:GridView ID="gv_receiver" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="dsUsers" ForeColor="#333333" GridLines="None" Width="494px">
                                     <AlternatingRowStyle BackColor="White" />
                                     <Columns>
@@ -122,7 +116,6 @@
                                                 <asp:CheckBox ID="cb_email" runat="server" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
-
                                     </Columns>
                                     <EditRowStyle BackColor="#7C6F57" />
                                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -137,8 +130,7 @@
                                 </asp:GridView>
                             </div>
     
-                        </div>
-                        
+                        </div> 
                         <div class="form-group">
                             <div class="col-lg-10">
                             <asp:Label ID="lbl_Mail" runat="server" Visible="false" Font-Bold="true" CssClass="col-lg-2 control-label"></asp:Label>
@@ -150,12 +142,12 @@
             </div>
         </div>
     </div>
-    <script src="js/jquery1.js" type="text/javascript"></script>
-    <script src="js/bootstrap1.min.js" type="text/javascript"></script>
-    <script src="js/jquery.backstretch.js" type="text/javascript"></script>
+    <script src="../js/jquery.js" type="text/javascript"></script>
+    <script src="../js/bootstrap1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.backstretch.js" type="text/javascript"></script>
     <script type="text/javascript">
         'use strict';
-
+     
         /* ========================== */
         /* ::::::: Backstrech ::::::: */
         /* ========================== */
@@ -164,7 +156,7 @@
         [
       //      "img/44.jpg",
     //        "img/colorful.jpg",
-            "img/34.jpg",
+            "../img/34.jpg",
   //          "img/images.jpg"
         ],
 
@@ -175,34 +167,7 @@
     );
     </script>
 
-    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
-         <!--grumble js-->
-        <script src="js/jquery.grumble.min.js?v=6"></script>
-        <script src="js/Bubble.js" type="text/javascript"></script>     
-        <script type="text/javascript">
-            $('#div_emailform').grumble({
-                text: 'write your email here',
-                angle: 120,
-                distance: -50,
-                showAfter: 2000,
-                hideAfter: false,
-                hasHideButton: true,
-                type: 'alt-',
-                buttonHideText: 'Pop!'
-            });
-
-            $('#div_checkbox').grumble({
-                text: 'before send email,choose the receiver(s) from the checkbox',
-                angle: 120,
-                distance: 0,
-                showAfter: 2000,
-                hideAfter: false,
-                hasHideButton: true,
-                type: 'alt-',
-                buttonHideText: 'Pop!'
-            });
-
-        </script>
+    
 
 </asp:Content>
 

@@ -43,24 +43,22 @@
     <!--[if IE 7]>    <html> <![endif]-->
     <!--[if IE 8]>    <html> <![endif]-->
     <!--[if IE 9]> <html> <![endif]-->
-    <meta charset="utf-8" >
+    <meta charset="utf-8" />
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Coming soon, Bootstrap, Bootstrap 3.0, Free Coming Soon, free coming soon, free template, coming soon templRegister the app</title>
     <!-- ============ Google fonts ============ -->
-    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet'
-        type='text/css' />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800'
-        rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800' rel='stylesheet' type='text/css' />
+
     <!-- ============ Add custom CSS here ============ -->
-    <link href="css/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="css/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
 
-    <!--grumble CSS-->
-    <link href="css/grumble.min.css" rel="stylesheet" type="text/css" />
 
-    <div class="container padding100 ful">
+    <div class="container padding100 full">
+
         <!--the send email form-->
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <!--bread crump-->
@@ -192,7 +190,7 @@
             </div>
         </div>
     </div>
-    <script src="js/jquery1.js" type="text/javascript"></script>
+    <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/bootstrap1.min.js" type="text/javascript"></script>
     <script src="js/jquery.backstretch.js" type="text/javascript"></script>      
     <script type="text/javascript">
@@ -218,20 +216,5 @@
 
     </script>
 
-    <script src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
-         <!--grumble js-->
-        <script src="js/jquery.grumble.min.js?v=6"></script>
-        <script src="js/Bubble.js" type="text/javascript"></script>   
-        <script type="text/javascript">
-            $('#div_register').grumble({
-                text: 'This is the register form of our website',
-                angle: 100,
-                distance: 300,
-                showAfter: 2000,
-                hideAfter: false,
-                hasHideButton: true,
-                buttonHideText: 'Pop!'
-            });
-
-        </script>
+    
 </asp:Content>

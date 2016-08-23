@@ -11,8 +11,23 @@ public partial class SiteMap : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        LinkButton code1link = (LinkButton)Master.FindControl("code1link");
+        LinkButton code2link = (LinkButton)Master.FindControl("code2link");
+        code1link.Text = "Site Map";
+        code2link.Visible = false;
         GetEventDates();
+    }
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        if (Session["Theme"] != null)
+        {
+            Page.Theme = (String)Session["Theme"];
+        }
+        else
+        {
+
+            Page.Theme = "none";
+        }
     }
 
     private void GetEventDates()
