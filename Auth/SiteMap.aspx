@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainBody" runat="Server">
 
 
-   <asp:SqlDataSource ID="dsEvent" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\db_events.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb"></asp:SqlDataSource>
+   <asp:SqlDataSource ID="dsEvent" runat="server" ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\db_events.accdb;Persist Security Info=True" ProviderName="System.Data.OleDb">
+
+   </asp:SqlDataSource>
 
 
 
@@ -38,7 +40,9 @@
                     <asp:ScriptManager ID="ScriptManagerCalendar" runat="server"></asp:ScriptManager>
                     <asp:UpdatePanel ID="UpdatePanelCalendar" runat="server" UpdateMode="Always">
                         <ContentTemplate>
-                            <asp:Calendar ID="Calendar1" runat="server" CssClass="myCalendar" DayNameFormat="Short" Font-Names="Tahoma" Font-Size="18px" CellPadding="0" OnDayRender="Calendar1_DayRender" OnInit="Calendar1_Init" OnSelectionChanged="Calendar1_SelectionChanged" Height="271px" Width="391px" NextMonthText="." PrevMonthText="." SelectMonthText=">>" SelectWeekText=">">
+                            <asp:Calendar ID="Calendar1" runat="server" CssClass="myCalendar" DayNameFormat="Short" Font-Names="Tahoma" Font-Size="18px"
+                                 CellPadding="0" OnDayRender="Calendar1_DayRender" OnInit="Calendar1_Init" OnSelectionChanged="Calendar1_SelectionChanged" Height="271px" Width="391px" NextMonthText="."
+                                 PrevMonthText="." SelectMonthText=">>" SelectWeekText=">">
                                 <OtherMonthDayStyle ForeColor="#b0b0b0" />
                                 <DayStyle ForeColor="#2d3338" CssClass="myCalendarDay" />
                                 <DayHeaderStyle ForeColor="#2d3338" CssClass="myCalendarDayHeader" />

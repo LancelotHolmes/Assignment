@@ -13,7 +13,7 @@ public partial class Auth_ShowSourceCode : System.Web.UI.Page
     {
         String fp = Request.QueryString["path"].Trim(' ');
 
-        if (fp.Equals("/Auth/Documentation.aspx"))
+        if ( fp.Length-24>=0 &&fp.Substring(fp.Length-24).Equals("/Auth/Documentation.aspx"))
         {
             DirectoryInfo dir = new DirectoryInfo(Server.MapPath("../css"));
             ArrayList filelist = new ArrayList();
@@ -36,7 +36,7 @@ public partial class Auth_ShowSourceCode : System.Web.UI.Page
                 faqtitle.Text = faq;
                 showfaq.Text = ReadFile(Server.MapPath(faq));
        }
-        else if (fp.Equals("/login.aspx"))
+        else if (fp.Length - 11 >= 0 && fp.Substring(fp.Length-11).Equals("/login.aspx"))
         {
             codetitle.Text = fp;
             showcode.Text = ReadFile(Server.MapPath(fp));

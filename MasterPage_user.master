@@ -81,7 +81,18 @@
                     <li><a href="~/Auth/Documentation.aspx" runat="server">Documentation</a></li>
                     <li><asp:HyperLink ID="hluser" runat="server" Text ="Login" NavigateUrl="~/login.aspx" /></li>
                     <li><asp:LinkButton ID="hllogout" runat="server"  CausesValidation="false" Text ="Logout"  OnClick="Logout" /></li>
-                    <li><asp:LinkButton ID="skinbut" runat="server" CausesValidation="false" Text ="ChangeSkin" OnClick="Changeskin" /></li>
+                    <%--<li><asp:LinkButton ID="skinbut" runat="server" CausesValidation="false" Text ="ChangeSkin" OnClick="Changeskin" /></li>--%>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                        role="button" aria-haspopup="true" aria-expanded="false" runat="server">Change Skins<span class="caret"
+                            runat="server"></span></a>
+                        <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
+                            <li><asp:LinkButton runat="server" Text="origin" OnClick="Changeskin" CommandName="origin" ></asp:LinkButton></li>
+                            <li><asp:LinkButton runat="server" Text="black" OnClick="Changeskin" CommandName="black"></asp:LinkButton></li>   
+                            <li><asp:LinkButton runat="server" Text="red" OnClick="Changeskin" CommandName="red" ></asp:LinkButton></li>   
+                            <li><asp:LinkButton runat="server" Text="blue" OnClick="Changeskin" CommandName="blue"></asp:LinkButton></li>                          
+                        </ul>
+                    </li>
+
                 </ul>
             </div>
         </div>

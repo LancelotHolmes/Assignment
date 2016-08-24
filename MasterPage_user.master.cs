@@ -33,22 +33,50 @@ public partial class MasterPage_user : System.Web.UI.MasterPage
     protected void MasterCode(object sender, EventArgs e)
     {
         String url = "";
-        if (Request.ServerVariables["SCRIPT_NAME"].Equals("/Home.aspx"))
+        String pagename = Request.ServerVariables["SCRIPT_NAME"];
+        if (pagename.Substring(pagename.Length-10).Equals("/Home.aspx"))
             url = "~/Auth/ShowSourceCode.aspx?path=" + "~/MasterPage_user.master";
         else
             url = "~/Auth/ShowSourceCode.aspx?path=" + "Skin";
         Response.Redirect(url, "_blank","");
     }
+    //protected void Changeskin(object sender, EventArgs e)
+    //{
+    //    string[] skinsStr = { "black", "red", "blue", "none" };
+    //    List<String> skins = new List<string>(skinsStr);
+    //    string url = Request.ServerVariables["SCRIPT_NAME"];
+    //    Random ran = new Random();
+    //    int index = ran.Next() % 4;
+    //    Session["Theme"] = skins[index];
+    //    Server.Transfer(Request.Path);
+    //}
     protected void Changeskin(object sender, EventArgs e)
     {
-        string[] skinsStr = { "black", "red", "blue", "none" };
-        List<String> skins = new List<string>(skinsStr);
-        string url = Request.ServerVariables["SCRIPT_NAME"];
-        Random ran = new Random();
-        int index = ran.Next() % 4;
-        Session["Theme"] = skins[index];
+        String skin = "none";
+        LinkButton btn = (LinkButton)sender;
+        switch (btn.CommandName)
+        {
+            case "black":
+                skin = "black";
+                break;
+
+            case "red":
+                skin = "red";
+                break;
+
+            case "blue":
+                skin = "blue";
+                break;
+            case "origin":
+                skin = "none";
+                break;
+        }
+        Session["Theme"] = skin;
         Server.Transfer(Request.Path);
     }
+
+
+
 }
 public static class ResponseHelper
 {

@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="Register" Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage_user.master" CodeFile="register.aspx.cs" Inherits="preview_dotnet_templates_registration_Form_index" %>
 <asp:Content ID="Registercontent" ContentPlaceHolderID="MainBody" Runat="Server">
     <asp:accessdatasource runat="server" id="users" DataFile="~/App_Data/database.accdb" 
-    SelectCommand="SELECT * FROM [user]" DeleteCommand="DELETE FROM [user] WHERE [ID] = ?" InsertCommand="INSERT INTO [user] ([username], [password], [gender], [degree], [email], [phoneno], [homepage], [hobby]) VALUES (?, ?, ?, ?, ?, ?, ?, ?)" OnSelecting="users_Selecting" UpdateCommand="UPDATE [user] SET [username] = ?, [password] = ?, [gender] = ?, [degree] = ?, [email] = ?, [phoneno] = ?, [homepage] = ? WHERE [ID] = ?">
+    SelectCommand="SELECT * FROM [user]" DeleteCommand="DELETE FROM [user] WHERE [ID] = ?" 
+        InsertCommand="INSERT INTO [user] ([username], [password], [gender], [degree], [email], [phoneno], [homepage], [hobby]) VALUES (?, ?, ?, ?, ?, ?, ?, ?)" 
+        OnSelecting="users_Selecting" UpdateCommand="UPDATE [user] SET [username] = ?, [password] = ?, [gender] = ?, [degree] = ?, [email] = ?, [phoneno] = ?, [homepage] = ? WHERE [ID] = ?">
     <DeleteParameters>
         <asp:Parameter Name="ID" Type="Int32" />
     </DeleteParameters>
@@ -76,9 +78,11 @@
                 <div class="form-horizontal">
                     <fieldset>                        
                         <legend>Registration Form <i class="fa fa-pencil pull-right"></i></legend>
-                         <asp:HyperLink ID="HyperLink1" runat="server" Font-Italic="true" Font-Size="15px" ForeColor="White" Font-Underline="true" NavigateUrl="~/Auth/ShowAllUsers.aspx">Click here to see all the users.</asp:HyperLink>
+                         <asp:HyperLink ID="HyperLink1" runat="server" Font-Italic="true" Font-Size="15px" ForeColor="White" Font-Underline="true" NavigateUrl="~/Auth/ShowAllUsers.aspx">
+                             Click here to see all the users.</asp:HyperLink>
                          <br />
-                         <asp:HyperLink ID="HyperLink2" runat="server" Font-Italic="true" Font-Size="15px" Font-Underline="true" ForeColor="White" NavigateUrl="~/Auth/SelectUsers.aspx">Click here to search users under certain condition.</asp:HyperLink>
+                         <asp:HyperLink ID="HyperLink2" runat="server" Font-Italic="true" Font-Size="15px" Font-Underline="true" ForeColor="White" NavigateUrl="~/Auth/SelectUsers.aspx">
+                             Click here to search users under certain condition.</asp:HyperLink>
                          <hr />
 
                         <div class="form-group">
@@ -86,7 +90,8 @@
                             <div class="col-lg-10">
                                 <asp:TextBox ID="UNTextbox" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
-                            <asp:RequiredFieldValidator ID="vldUsername" runat="server" Display="Dynamic" Font-Size="15px" ForeColor="Red" ErrorMessage="Please input a user name." ControlToValidate="UNTextbox" />
+                            <asp:RequiredFieldValidator ID="vldUsername" runat="server" Display="Dynamic" Font-Size="15px" ForeColor="Red" 
+                                ErrorMessage="Please input a user name." ControlToValidate="UNTextbox" />
                         </div>
                         
                         <div class="form-group">
@@ -95,8 +100,10 @@
                                 <asp:TextBox ID="PWTextbox" runat="server" CssClass="form-control"
                                     TextMode="Password"></asp:TextBox>
                             </div>
-                            <asp:RequiredFieldValidator ID="vldPassword" runat="server" Font-Size="15px" ForeColor="Red" Display="Dynamic" ErrorMessage="Please input a password." ControlToValidate="PWTextbox" />
-                            <asp:CustomValidator ID="vldlenth" runat="server" Font-Size="15px" ForeColor="Red" Display="Dynamic" ControlToValidate="PWTextbox" ClientValidationFunction="check" Text="Password must be between 6 and 18.">
+                            <asp:RequiredFieldValidator ID="vldPassword" runat="server" Font-Size="15px" ForeColor="Red" Display="Dynamic" 
+                                ErrorMessage="Please input a password." ControlToValidate="PWTextbox" />
+                            <asp:CustomValidator ID="vldlenth" runat="server" Font-Size="15px" ForeColor="Red" Display="Dynamic" ControlToValidate="PWTextbox" 
+                                ClientValidationFunction="check" Text="Password must be between 6 and 18.">
                             </asp:CustomValidator>
                         </div>
                         <div class="form-group">
@@ -104,7 +111,8 @@
                             <div class="col-lg-10">
                                 <asp:TextBox ID="PWTextbox1" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                             </div>
-                            <asp:CompareValidator ID="comparePassword" runat="server" Font-Size="15px" ForeColor="Red" Display="Dynamic" ErrorMessage="Passwords entered are not the same." 
+                            <asp:CompareValidator ID="comparePassword" runat="server" Font-Size="15px" ForeColor="Red" Display="Dynamic"
+                                 ErrorMessage="Passwords entered are not the same." 
                                 ControlToCompare="PWTextbox" ControlToValidate="PWTextbox1" />
                         </div>
                         <div class="form-group">
@@ -119,7 +127,8 @@
                                     </label>
                                 </div>
                             </div>
-                            <asp:RequiredFieldValidator ID="vldGender" runat="server" Font-Size="15px" ForeColor="Red" Display="Dynamic" ErrorMessage="Please select a gender" ControlToValidate="RadioButtonList1" />
+                            <asp:RequiredFieldValidator ID="vldGender" runat="server" Font-Size="15px" ForeColor="Red" Display="Dynamic" 
+                                ErrorMessage="Please select a gender" ControlToValidate="RadioButtonList1" />
                         </div>
                         <div class="form-group">
                           <asp:Label ID="Label5" runat="server" Text="Degree" CssClass="col-lg-2 control-label"></asp:Label>                          
@@ -138,8 +147,10 @@
                             <div class="col-lg-10">
                                 <asp:TextBox ID="EmailTextbox" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
-                            <asp:RequiredFieldValidator ID="vldEmail" Font-Size="15px" ForeColor="Red" runat="server" Display="Dynamic" ErrorMessage="Please enter a Email." ControlToValidate="EmailTextbox" />
-                            <asp:RegularExpressionValidator ID="vldEmailformat" runat="server" Font-Size="15px" ForeColor="Red" ValidationExpression=".*@.*\..*" 
+                            <asp:RequiredFieldValidator ID="vldEmail" Font-Size="15px" ForeColor="Red" runat="server" Display="Dynamic" 
+                                ErrorMessage="Please enter a Email." ControlToValidate="EmailTextbox" />
+                            <asp:RegularExpressionValidator ID="vldEmailformat" runat="server" Font-Size="15px" ForeColor="Red" 
+                                ValidationExpression=".*@.*\..*" 
                                 ControlToValidate="EmailTextbox" ErrorMessage="Invalid email" Display="Dynamic" />
                         </div>
 
@@ -148,7 +159,8 @@
                             <div class="col-lg-10">
                                 <asp:TextBox ID="PhoneTextbox" runat="server" Font-Size="15px" Display="Dynamic" CssClass="form-control"></asp:TextBox>
                             </div>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please enter a Email." ControlToValidate="EmailTextbox" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please enter a Email." 
+                                ControlToValidate="EmailTextbox" />
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ValidationExpression="\b1\d{10}\b|\b8\d{7}\b" 
                                 ControlToValidate="PhoneTextbox" Font-Size="15px" ForeColor="Red" ErrorMessage="Invalid Phone No" Display="Dynamic" />
                         </div>
@@ -159,8 +171,10 @@
                             <div class="col-lg-10">
                                 <asp:TextBox ID="HPTextbox" runat="server" Display="Dynamic" CssClass="form-control"></asp:TextBox>
                             </div>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Font-Size="15px" ForeColor="Red" ErrorMessage="Please enter a Email." ControlToValidate="EmailTextbox" />
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ValidationExpression="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?" 
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Font-Size="15px" ForeColor="Red" 
+                                ErrorMessage="Please enter a Email." ControlToValidate="EmailTextbox" />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+                                 ValidationExpression="http://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?" 
                                 ControlToValidate="HPTextbox" Font-Size="15px" ForeColor="Red" ErrorMessage="Invalid URL" Display="Dynamic" />
                         </div>
                         <div class="form-group">
